@@ -1,0 +1,22 @@
+{
+  "project_name": "CPP Template Executable",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_short_description": "A CPP Exe template.",
+  "version": "0.1.0",
+  "cpp_standard": [
+    "20",
+    "17",
+    "14",
+    "11"
+  ],
+  "full_name": "My Name",
+  "email": "my_mail@mail.org",
+  "license": [
+    "Apache-2",
+    "BSD-3",
+    "GPL-3",
+    "MIT",
+    "MPL-2",
+    "Proprietary"
+  ]
+}

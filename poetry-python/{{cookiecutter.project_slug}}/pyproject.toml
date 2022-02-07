@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "{{cookiecutter.project_version}}"
+description = "{{cookiecutter.project_description}}"
+authors = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+
+[tool.poetry.dependencies]
+python = "^{{cookiecutter.python_version}}"
+loguru = "^0.5.3"
+
+[tool.poetry.dev-dependencies]
+pep8 = "^1.7.1"
+pytest = "^6.2.5"
+bandit = "^1.7.2"
+black = "^21.12b0"
+rope = "^0.22.0"
+pylint = "^2.12.2"
+
+[build-system]
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.masonry.api"
