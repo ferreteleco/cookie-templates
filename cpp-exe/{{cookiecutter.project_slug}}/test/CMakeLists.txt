@@ -24,9 +24,9 @@ target_include_directories(
 # Link catch library for test running
 # Link project library for testing
 target_link_libraries(
+  ${TEST_BIN}
   PRIVATE
     Catch2::Catch2WithMain
-    ${PROJECT_NAME}
 )
 
 target_compile_options(
