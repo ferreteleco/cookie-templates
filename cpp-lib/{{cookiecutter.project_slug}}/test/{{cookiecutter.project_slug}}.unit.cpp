@@ -14,7 +14,5 @@
 #include "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}.hpp"
 
 TEST_CASE("add") {
-  REQUIRE({
-    { cookiecutter.project_slug }
-  } ::add(1, 1) == 2);
+  REQUIRE({{cookiecutter.project_slug}}::add(1, 1) == 2);
 }
