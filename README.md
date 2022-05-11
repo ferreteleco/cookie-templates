@@ -11,8 +11,8 @@ In order to start a new project, install [Cookiecutter](https://cookiecutter.rea
 $ cookiecutter https://github.com/ferreteleco/cookie-templates.git --directory="<dir-name>"
 ```
 
-Where <dir-name> is one of the sub-folders of this repository (each one will hold a different
-configuration for remote development in Docker containers).
+Where \<dir-name\> is one of the sub-folders of this repository (each one will hold a template for a 
+different kind of project). Each available template can be seen in sub-sections below.
 
 **IMPORTANT!** This will create the full structure for the project (including top level directory),
 so it is recommended that the project generation be invoked from outside vscode. The remote
