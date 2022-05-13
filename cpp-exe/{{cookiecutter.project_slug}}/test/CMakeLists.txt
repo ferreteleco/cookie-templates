@@ -11,7 +11,7 @@ set(TEST_BIN_SOURCES
 # Add tests source files after main
 add_executable(
   ${TEST_BIN}
-  {{cookiecutter.project_slug}}.unit.cpp
+  {{cookiecutter.project_slug}}_tests.cpp
 )
 
 target_include_directories(
