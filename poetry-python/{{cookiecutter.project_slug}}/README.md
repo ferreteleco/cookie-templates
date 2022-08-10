@@ -8,10 +8,15 @@
 - [Poetry](https://github.com/python-poetry/poetry)
 {% if cookiecutter.generate_pyenv_file %}
 - [Pyenv](https://github.com/pyenv/pyenv)
-{% endif -%}
-{% endif -%}
+{% endif %}
+## Documentation
 
-{% if cookiecutter.generate_poetry_file -%}
+In order to generate documentation, simply run:
+
+```bash
+poetry run pdoc -o docs -d google {{cookiecutter.project_slug}}
+```
+
 ## Installation
 
 In order to install the project, simply run:
@@ -19,10 +24,6 @@ In order to install the project, simply run:
 ```bash
 poetry install
 ```
-
-{% endif -%}
-
-{% if cookiecutter.generate_poetry_file -%}
 
 ## Building
 
