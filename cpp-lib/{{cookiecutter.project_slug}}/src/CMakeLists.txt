@@ -2,7 +2,7 @@
 
 add_library(
   ${PROJECT_NAME}
-  SHARED
+  {{ cookiecutter.library_type.upper() }}
   {{cookiecutter.project_slug}}.cpp
 )
 
