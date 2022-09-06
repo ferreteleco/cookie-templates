@@ -9,6 +9,10 @@
     "14",
     "11"
   ],
+  "library_type": [
+    "shared",
+    "static"
+  ],
   "full_name": "My Name",
   "email": "my_mail@mail.com",
   "license": [
