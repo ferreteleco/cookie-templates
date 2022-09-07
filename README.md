@@ -87,6 +87,7 @@ to fill in the following values:
   follow [Semantic Versioning](https://semver.org/) recommendations.
 - _**cpp_standard**_: C++ standard to use for compilation. Available values are C++17 (default),
   C++14 and C++11.
+- _**library_type**_: kind of library to build, either shared (default) or static.
 - _**full_name**_: Full name of the main maintainer of the project.
 - _**email**_: Contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
