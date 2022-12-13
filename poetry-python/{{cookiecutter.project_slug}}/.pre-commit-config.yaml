@@ -38,7 +38,7 @@ repos:
     - id: black-jupyter
       name: black-jupyter
       description: Formats code using black formatter, support for jupyter files.
--   repo: https://gitlab.com/pycqa/flake8
+-   repo: https://github.com/pycqa/flake8
     rev: 5.0.4
     hooks:
     - id: flake8
