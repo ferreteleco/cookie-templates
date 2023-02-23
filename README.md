@@ -92,7 +92,7 @@ to fill in the following values:
 - _**email**_: Contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
 
-## Python module (with poetry support) (dir-name: poetry-python)
+## Python module (with poetry support) (dir-name: python)
 
 A [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) template for python projects.
 
