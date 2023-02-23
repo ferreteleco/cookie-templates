@@ -12,10 +12,10 @@
   "full_name": "My Name",
   "email": "my_mail@mail.org",
   "license": [
+    "MIT",
     "Apache-2",
     "BSD-3",
     "GPL-3",
-    "MIT",
     "MPL-2",
     "Proprietary"
   ]
