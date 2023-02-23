@@ -1,0 +1,168 @@
+{
+  "DOCU": {
+    "prefix": "docu",
+    "body": [
+      "%${CLIPBOARD/(.*)/${1:/upcase}/} ${2:brief}",
+      "%",
+      "%   ${3:description}",
+      "%",
+      "%   Input arguments:",
+      "%",
+      "%     - ${4:iparam}: ${5:param_description}",
+      "%",
+      "%   Tuple Arguments:",
+      "%",
+      "%     - ${6:tuparam}: ${7:param_description}",
+      "%",
+      "%   Output arguments:",
+      "%",
+      "%     - ${8:oparam}: ${9:param_description}",
+      "%",
+      "% Author: ${10:{{ cookiecutter.full_name }} ({{ cookiecutter.email }})}",
+      "% Project: {{ cookiecutter.project_name }}",
+      "%",
+      "% Matlab Version: {{ cookiecutter.matlab_version }}",
+      "${11:Copyright (c) {% now 'local', '%Y' %} {{ cookiecutter.full_name }}"
+    ],
+    "description": "Adds function documentation template",
+    "scope": "matlab"
+  },
+  "TIC": {
+    "prefix": "tic",
+    "body": [
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "% Matlab routine timing procedure. You can safely ignore it.",
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "t_start = tic;",
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+    ],
+    "description": "Adds matlab tic command",
+    "scope": "matlab"
+  },
+  "TOC": {
+    "prefix": "toc",
+    "body": [
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "% Matlab routine timing procedure. You can safely ignore it.",
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "t_end = toc(t_start);",
+      "${1:obj.}LOG.timing(mfilename, ...",
+      "sprintf('${2:${TM_DIRECTORY}}/${TM_FILENAME_BASE}:${3:$CLIPBOARD} execution (${4|method,function,script|}) took %f s\\n', t_end));",
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+    ],
+    "description": "Adds matlab toc command and result display",
+    "scope": "matlab"
+  },
+  "CHLO": {
+    "prefix": "chlo",
+    "body": [
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "% MATLAB's logging (log4m) utility code. You can safely ignore it.",
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "global LOG;",
+      "if isempty(LOG) || isfield(LOG, \"dummy\")",
+      "LOG = struct('trace', @(varargin) 1, 'debug', @(varargin) 1, 'info', ...",
+      "@(varargin) 1, 'warn', @(varargin) 1, 'timing', @(varargin) 1, 'error', @(varargin) 1, ...",
+      "'fatal', @(varargin) 1, 'dummy', true);",
+      "end",
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+    ],
+    "description": "Add log sentry check (log4m)",
+  },
+  "LOGR": {
+    "prefix": "logr",
+    "body": [
+      "LOG.${1|fatal,error,timing,warn,info,debug,trace|}(mfilename,'${2:message}');"
+    ],
+    "description": "Adds logger entry (Log4m)"
+  },
+  "FILR": {
+    "prefix": "filr",
+    "body": "get_file_base_path(${1:mfilename('fullpath')},${2:0});",
+    "description": "Adds function call to get_base_path function"
+  },
+  "ARGS": {
+    "prefix": "args",
+    "body": [
+      "arguments",
+      "${1:arg_name} (${2:1}, ${3:1}) ${4:type}${5:=default_arg}",
+      "end"
+    ],
+    "description": "Adds function call to get_base_path function"
+  },
+  "CFG": {
+    "prefix": "cfg",
+    "body": [
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "% log4m Init. Config. (MATLAB's logging utility code. You can safely ignore it)",
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "global LOG;",
+      "${1:LOGS_FOLDER = \"${2:logs}\";}",
+      "${3:LOG_NAME = strcat(\"${4:${TM_FILENAME_BASE}}_\", get_UTC_datetime_string());}",
+      "LOG = log4m.getLogger(${5:sprintf(\"%s/%s.log\", LOGS_FOLDER, LOG_NAME)});",
+      "LOG.setLogLevel(log4m.${6|OFF,FATAL,ERROR,TIMING,WARN,INFO,DEBUG,TRACE|});",
+      "LOG.setCommandWindowLevel(log4m.${7|OFF,FATAL,ERROR,TIMING,WARN,INFO,DEBUG,TRACE|});",
+      "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+    ],
+    "description": "Adds function call to get_base_path function"
+  },
+  "STUPTST": {
+    "prefix": "stuptst",
+    "body": [
+      "function tests = ${TM_FILENAME_BASE}",
+      "\t%${TM_FILENAME_BASE} ${1:brief}.",
+      "\t%",
+      "\t%\t${2:description}",
+      "\t%",
+      "\t% Author: {{ cookiecutter.full_name }} ({{ cookiecutter.email }})",
+      "\t% Project: {{ cookiecutter.project_name }}",
+      "\t%",
+      "\t% Matlab Version: {{ cookiecutter.matlab_version }}",
+      "\t% Copyright (c) {% now 'local', '%Y' %} {{ cookiecutter.full_name }}",
+      "",
+      "\ttests = functiontests(localfunctions);",
+      "end",
+      "",
+      "function setupOnce(~)",
+      "\t%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "\t% MATLAB's logging (log4m) utility code. You can safely ignore it.",
+      "\t%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "\tglobal LOG;",
+      "\tif isempty(LOG) || isfield(LOG, \"dummy\")",
+      "\t\tLOG = struct('trace', @(varargin) 1, 'debug', @(varargin) 1, 'info', ...",
+      "\t\t\t@(varargin) 1, 'warn', @(varargin) 1, 'timing', @(varargin) 1, ...",
+      "\t\t\t 'error', @(varargin) 1, 'fatal', @(varargin) 1, 'dummy', true);",
+      "\telse",
+      "\t\t${3:LOGS_FOLDER = \"${4:logs}\";}",
+      "\t\t${5:LOG_NAME = strcat(\"${6:{${TM_FILENAME_BASE}}_\", get_UTC_datetime_string());}",
+      "\t\tLOG.setFilename(${7:sprintf(\"%s/%s.log\", LOGS_FOLDER, LOG_NAME)});",
+      "\t\tLOG.setLogLevel(log4m.${8|OFF,FATAL,ERROR,TIMING,WARN,INFO,DEBUG,TRACE|});",
+      "\t\tLOG.setCommandWindowLevel(log4m.${9|OFF,FATAL,ERROR,TIMING,WARN,INFO,DEBUG,TRACE|});",
+      "\tend",
+      "\t%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+      "end"
+    ],
+    "description": "Add test case file definition config.",
+  },
+  "TSTC": {
+    "prefix": "tstc",
+    "body": [
+      "function test_${1:test_name}(${2|~,testCase|})",
+      " ",
+      "% Inputs",
+      "input = ${3:input_var};",
+      " ",
+      "% Expected output",
+      "expected = ${4:expected_var};",
+      " ",
+      "% Function under test",
+      "computed = ${5:computed_var};",
+      " ",
+      "% Checks",
+      "assert(length(computed) == length(expected));",
+      "assert(${6:some_check});",
+      "end",
+    ],
+    "description": "Add test case",
+  }
+}
