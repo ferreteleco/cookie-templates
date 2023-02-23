@@ -16,6 +16,24 @@ def set_up_license():
     shutil.move(license_file, "./LICENSE")
 
 
+def remove_vscode_project_files():
+
+    vscode_project = {{cookiecutter.vscode_project}}
+
+    if vscode_project == True:
+        LOG.info("Generating .vscode folder (VSCode) with default snippets ...")
+        vscode_files = join("_", "vscode")
+
+        for file_or_folder in listdir(vscode_files):
+            makedirs(".vscode", exist_ok=True)
+            shutil.move(
+                join(vscode_files, file_or_folder), join(".vscode", file_or_folder)
+            )
+
+    else:
+        LOG.info("Skipping .vscode file generation (VSCode) ...")
+
+
 def clean():
     """Remove files and folders only needed as input for generation."""
     LOG.info("Removing input data folder ...")
@@ -34,6 +52,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG, format="%(message)s")
     LOG = logging.getLogger("post_gen_project")
 
+    remove_vscode_project_files()
     set_up_license()
     clean()
     change_line_endings_CRLF_to_LF()

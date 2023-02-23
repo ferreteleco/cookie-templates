@@ -3,6 +3,14 @@
 This repository can be used for generating a number of project structures in a number of different
 languages.
 
+## Version
+
+Current version is 1.2.0 and was set according to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+Project's version should be updated, when applicable:
+
+- In this very file.
+
 ## Usage
 
 In order to start a new project, install [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) and run the following command:
@@ -11,7 +19,7 @@ In order to start a new project, install [Cookiecutter](https://cookiecutter.rea
 $ cookiecutter https://github.com/ferreteleco/cookie-templates.git --directory="<dir-name>"
 ```
 
-Where \<dir-name\> is one of the sub-folders of this repository (each one will hold a template for a 
+Where \<dir-name\> is one of the sub-folders of this repository (each one will hold a template for a
 different kind of project). Each available template can be seen in sub-sections below.
 
 **IMPORTANT!** This will create the full structure for the project (including top level directory),
@@ -61,6 +69,8 @@ to fill in the following values:
 - _**full_name**_: Full name of the main maintainer of the project.
 - _**email**_: Contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
+- _**vscode_project**_: flag to control generation of .vscode folder, with default snippets (VSCode
+  text editor config files).
 
 ## Cpp library template (dir-name: cpp-lib)
 
@@ -91,8 +101,10 @@ to fill in the following values:
 - _**full_name**_: Full name of the main maintainer of the project.
 - _**email**_: Contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
+- _**vscode_project**_: flag to control generation of .vscode folder, with default snippets (VSCode
+  text editor config files).
 
-## Python module (with poetry support) (dir-name: poetry-python)
+## Python module (with poetry support) (dir-name: python)
 
 A [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) template for python projects.
 
@@ -115,7 +127,7 @@ to fill in the following values:
   value for the project slug.
 - _**project_slug**_: URL friendly name of the project. It is recommended to keep the default value.
 - _**project_description**_: short description of the project.
-- _**project_version**_: initial version of the project. If using a different value from the
+- _**version**_: initial version of the project. If using a different value from the
   default, please follow [Semantic Versioning](https://semver.org/) recommendations.
 - _**python_version**_: minimum required Python version in order to run the program.
 - _**generate_pyenv_file**: flag to control generation of .python-version file (local Python version
@@ -123,10 +135,32 @@ to fill in the following values:
 - _**generate_poetry_file**_: flag to control generation of pyproject.toml file (Poetry build system
   definition file).
 - _**vscode_project**_: flag to control generation of .vscode folder, with default tasks.json file
-  (VSCode text editor config files)
+  and some snippets (VSCode text editor config files).
 - _**full_name**_: full name of the main maintainer of the project.
 - _**email**_: contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
+
+## Matlab project (dir-name: matlab)
+
+A [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) template for matlab projects.
+
+### Variables
+
+Variables allow to customize your project. When running the previous command, you will be prompted
+to fill in the following values:
+
+- _**project_name**_: name of the project. This variable will also be used to create the default
+  value for the project slug.
+- _**project_slug**_: URL friendly name of the project. It is recommended to keep the default value.
+- _**project_description**_: short description of the project.
+- _**version**_: initial version of the project. If using a different value from the default, please
+   follow [Semantic Versioning](https://semver.org/) recommendations.
+- _**matlab_version**_: target version for matlab (documentation purposes).
+- _**full_name**_: full name of the main maintainer of the project.
+- _**email**_: contact email of the main maintainer of the project.
+- _**license**_: default license file for the project.
+- _**vscode_project**_: flag to control generation of .vscode folder, with default tasks.json file
+  and some snippets (VSCode text editor config files).
 
 ## Contributing
 

@@ -1,21 +1,16 @@
 {
-  "project_name": "CPP Template Executable",
+  "project_name": "Demo Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "project_short_description": "A CPP Exe template.",
+  "project_description": "",
   "version": "0.1.0",
-  "cpp_standard": [
-    "20",
-    "17",
-    "14",
-    "11"
-  ],
-  "full_name": "My Name",
-  "email": "my_mail@mail.org",
+  "matlab_version": "9.10.0.1851785 (R2021a) Update 6",
+  "full_name": "Your Name Here",
+  "email": "mail@example.com",
   "license": [
     "MIT",
     "Apache-2",
     "BSD-3",
-    "GPL-3",
+    "GPL-3",    
     "MPL-2",
     "Proprietary"
   ],

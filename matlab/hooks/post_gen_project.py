@@ -1,27 +1,18 @@
 """Post-generate hook for cookiecutter."""
 
+from os import listdir, makedirs
 from os.path import join
 from pathlib import Path
 import shutil
 
 import logging
 
-
-def set_up_license():
-    """Get license text and put it in project root."""
-    license_type = "{{ cookiecutter.license }}"
-
-    LOG.info("Moving %s license ...", license_type)
-    license_file = join("_", "licenses", license_type)
-    shutil.move(license_file, "./LICENSE")
-
-
 def remove_vscode_project_files():
 
     vscode_project = {{cookiecutter.vscode_project}}
 
     if vscode_project == True:
-        LOG.info("Generating .vscode folder (VSCode) with default snippets ...")
+        LOG.info("Generating .vscode folder (VSCode) with default tasks.json ...")
         vscode_files = join("_", "vscode")
 
         for file_or_folder in listdir(vscode_files):
@@ -32,6 +23,15 @@ def remove_vscode_project_files():
 
     else:
         LOG.info("Skipping .vscode file generation (VSCode) ...")
+
+
+def set_up_license():
+    """Get license text and put it in project root."""
+    license_type = "{{ cookiecutter.license }}"
+
+    LOG.info("Moving %s license ...", license_type)
+    license_file = join("_", "licenses", license_type)
+    shutil.move(license_file, "./LICENSE")
 
 
 def clean():

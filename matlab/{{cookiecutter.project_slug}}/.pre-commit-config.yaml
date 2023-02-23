@@ -1,0 +1,18 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+    -   id: check-merge-conflict
+        name: check-merge-conflict
+        description: Check for files that contain merge conflict strings.
+    -   id: trailing-whitespace
+        name: trailing-whitespace
+        description: Trims trailing whitespace
+    -   id: end-of-file-fixer
+        name: end-of-file-fixer
+        description: Makes sure files end in a newline and only a newline.
+    -   id: check-json
+        name: check-json
+        description: Attempts to load all json files to verify syntax.

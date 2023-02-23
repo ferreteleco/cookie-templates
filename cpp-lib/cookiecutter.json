@@ -16,11 +16,15 @@
   "full_name": "My Name",
   "email": "my_mail@mail.com",
   "license": [
+    "MIT",
     "Apache-2",
     "BSD-3",
-    "GPL-3",
-    "MIT",
+    "GPL-3",    
     "MPL-2",
     "Proprietary"
+  ],
+  "vscode_project": [
+    true,
+    false
   ]
 }
