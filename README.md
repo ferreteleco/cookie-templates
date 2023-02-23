@@ -69,6 +69,8 @@ to fill in the following values:
 - _**full_name**_: Full name of the main maintainer of the project.
 - _**email**_: Contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
+- _**vscode_project**_: flag to control generation of .vscode folder, with default snippets (VSCode
+  text editor config files).
 
 ## Cpp library template (dir-name: cpp-lib)
 
@@ -99,6 +101,8 @@ to fill in the following values:
 - _**full_name**_: Full name of the main maintainer of the project.
 - _**email**_: Contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
+- _**vscode_project**_: flag to control generation of .vscode folder, with default snippets (VSCode
+  text editor config files).
 
 ## Python module (with poetry support) (dir-name: python)
 
@@ -131,7 +135,7 @@ to fill in the following values:
 - _**generate_poetry_file**_: flag to control generation of pyproject.toml file (Poetry build system
   definition file).
 - _**vscode_project**_: flag to control generation of .vscode folder, with default tasks.json file
-  (VSCode text editor config files)
+  and some snippets (VSCode text editor config files).
 - _**full_name**_: full name of the main maintainer of the project.
 - _**email**_: contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
@@ -155,8 +159,8 @@ to fill in the following values:
 - _**full_name**_: full name of the main maintainer of the project.
 - _**email**_: contact email of the main maintainer of the project.
 - _**license**_: default license file for the project.
-- _**vscode_project**_: flag to control generation of .vscode folder, with default snippets file
-  (VSCode text editor config files)
+- _**vscode_project**_: flag to control generation of .vscode folder, with default tasks.json file
+  and some snippets (VSCode text editor config files).
 
 ## Contributing
 

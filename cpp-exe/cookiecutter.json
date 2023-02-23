@@ -18,5 +18,9 @@
     "GPL-3",
     "MPL-2",
     "Proprietary"
+  ],
+  "vscode_project": [
+    true,
+    false
   ]
 }
