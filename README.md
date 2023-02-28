@@ -5,7 +5,7 @@ languages.
 
 ## Version
 
-Current version is 1.2.0 and was set according to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+Current version is 1.2.1 and was set according to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Project's version should be updated, when applicable:
 
