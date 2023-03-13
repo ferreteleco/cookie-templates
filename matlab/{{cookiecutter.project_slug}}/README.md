@@ -9,7 +9,6 @@ Current version is {{ cookiecutter.version }} and was set according to [Semantic
 Project's version should be updated, when applicable:
 
 - In this very file.
-
 - In the changelog.
 
 ## Prerequisites
@@ -17,7 +16,6 @@ Project's version should be updated, when applicable:
 This project was developed using matlab version {{ cookiecutter.matlab_version }}.
 
 - **m2html***: open source documentation generator for matlab -> [m2html homepage](https://www.artefact.tk/software/matlab/m2html/)
-
 - **log4m****: open source matlab logging facility -> [log4m - Matlab File Exchange](https://es.mathworks.com/matlabcentral/fileexchange/37701-log4m-a-powerful-and-simple-logger-for-matlab)
 
 \* It has to be unzipped first (in the *tools* folder).
