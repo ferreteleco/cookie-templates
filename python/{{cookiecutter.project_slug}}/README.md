@@ -2,6 +2,16 @@
 
 {{ cookiecutter.project_description }}.
 
+## Version
+
+Current version is {{cookiecutter.version}} and was set according to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+Project's version should be updated, when applicable:
+
+- In this very file.
+- In the changelog.
+- In the base \_\_init\_\_.py file ({{cookiecutter.project_slug}}/\_\_init\_\_.py).
+
 {% if cookiecutter.generate_poetry_file -%}
 ## Prerequisites
 

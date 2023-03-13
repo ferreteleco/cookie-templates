@@ -2,6 +2,16 @@
 
 {{ cookiecutter.project_short_description }}
 
+## Version
+
+Current version is {{cookiecutter.version}} and was set according to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+Project's version should be updated, when applicable:
+
+- In this very file.
+- In the changelog.
+- In the base CMakeLists.txt file.
+
 ## Building
 
 In order to build the library, execute the following commands:
