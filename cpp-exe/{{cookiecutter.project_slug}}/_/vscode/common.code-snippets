@@ -36,4 +36,14 @@
     ],
     "description": "Add Impl. Notes",
   }
+  {%- if cookiecutter.add_spdlog_utils == 'True' -%}
+  ,
+  "SPDLOG": {
+		"prefix": "nwlog",
+		"body": [
+			"SPDLOG_LOGGER_${1|TRACE,DEBUG,INFO,WARN,ERROR,CRITICAL|}(spdlog::get({{cookiecutter.project_acronym}}_LOG_NAME), \"${2:message}\");",
+		],
+		"description": "Add spdlog entry point",
+	}
+  {%- endif %}
 }
