@@ -49,8 +49,10 @@ Please also list any relevant details for your test configuration
 
 **Test Configuration**:
 
-- Compiler/interpreter version:
+- Cookiecutter version:
+- Python version:
 - OS Version:
+
 
 ## Further comments
 
