@@ -15,7 +15,6 @@ endif()
 
 # Installation directory
 include(GNUInstallDirs)
-set(CMAKE_INSTALL_CONFIGDIR "${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake")
 
 # Add Build Targets
 add_subdirectory(src)

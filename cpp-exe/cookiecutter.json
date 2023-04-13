@@ -1,6 +1,7 @@
 {
   "project_name": "CPP Template Executable",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_acronym": "{%- for word in cookiecutter.project_slug.split('_') -%}{{ word[0].upper() }}{%- endfor -%}",
   "project_short_description": "A CPP Exe template.",
   "version": "0.1.0",
   "cpp_standard": [
@@ -20,6 +21,10 @@
     "Proprietary"
   ],
   "vscode_project": [
+    true,
+    false
+  ],
+  "add_spdlog_utils": [
     true,
     false
   ]
