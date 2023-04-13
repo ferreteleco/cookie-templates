@@ -14,7 +14,7 @@
 #include <iostream>
 #include <spdlog/sinks/basic_file_sink.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
-#include "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}.hpp"
+#include "spdlog_config.hpp"
 
 namespace {{cookiecutter.project_slug}} {
 
