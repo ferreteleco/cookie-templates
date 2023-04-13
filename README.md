@@ -53,6 +53,12 @@ library:
 
 - [Catch2](https://github.com/catchorg/Catch2)
 
+{%- if cookiecutter.add_spdlog_utils == 'True' -%}
+An additional dependency may be added implicitly due to selected options during project creation:
+
+- spdlog: <https://github.com/gabime/spdlog>
+{%- endif %}
+
 ### Variables
 
 Variables allow to customize your project. When running the previous command, you will be prompted
@@ -92,6 +98,8 @@ to fill in the following values:
 - _**project_name**_: Name of the project. This variable will also be used to create the default
   value for the project slug.
 - _**project_slug**_: URL friendly name of the project. It is recommended to keep the default value.
+- _**project_acronym**_: Acronym of the project. Defaults to the first letter of each word in
+  project_slug, capitalized. It is recommended to maintain the default value.
 - _**project_short_description**_: Short description of the project.
 - _**version**_: Initial version of the project. If using a different value from the default, please
   follow [Semantic Versioning](https://semver.org/) recommendations.
@@ -103,6 +111,8 @@ to fill in the following values:
 - _**license**_: default license file for the project.
 - _**vscode_project**_: flag to control generation of .vscode folder, with default snippets (VSCode
   text editor config files).
+- _**add_spdlog_utils**_: Flag that controls whether or not to add some spdlog utility functions.
+  Defaults to true.
 
 ## Python module (with poetry support) (dir-name: python)
 
