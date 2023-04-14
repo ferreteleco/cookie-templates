@@ -53,7 +53,6 @@ Please also list any relevant details for your test configuration
 - Python version:
 - OS Version:
 
-
 ## Further comments
 
 <!-- If this is a relatively large or complex change, kick off the discussion by explaining why you
