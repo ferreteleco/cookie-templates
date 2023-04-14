@@ -6,7 +6,7 @@
  *
  * Created @ {% now 'utc', '%A, %dth %B %Y %I:%M:%S %p' %}
  * Copyright (c) {% now "utc", "%Y " -%} {{cookiecutter.full_name}}
- * {%- if cookiecutter.license  == 'Propietary' -%}All Rights Reserved {%- else -%} This software is released under the <<license>> license.{%- endif -%}
+ * {%- if cookiecutter.license == 'Propietary' %} All Rights Reserved.{%- else %} This software is released under the {{cookiecutter.license}} license.{%- endif %}
  */
 
 
@@ -39,7 +39,8 @@ namespace {{cookiecutter.project_slug}} {
    */
   int add(const int &a, const int &b);
 
-  {%- if cookiecutter.add_spdlog_utils == 'True' -%}
+  {%- if cookiecutter.add_spdlog_utils == 'True' %}
+
   /**
   * @brief Logging namespace.
   */
@@ -100,9 +101,9 @@ namespace {{cookiecutter.project_slug}} {
     *
     */
     __attribute__((destructor(101))) void lib_logging_deinitialization();
-    {% endif %}
+    {% endif -%}
   } // namespace logging
-  {% endif %}
+  {%- endif %}
 } // namespace {{cookiecutter.project_slug}}
 
 #endif /* {{cookiecutter.project_slug.upper()}}_HPP */
