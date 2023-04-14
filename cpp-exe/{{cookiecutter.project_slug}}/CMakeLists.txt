@@ -21,3 +21,6 @@ set(CMAKE_INSTALL_CONFIGDIR "${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake"
 add_subdirectory(src)
 add_subdirectory(test)
 
+# CPack
+include("${PROJECT_SOURCE_DIR}/cmake/CPackConfig.cmake")
+include(CPack)

@@ -1,6 +1,7 @@
 {
   "project_name": "CPP Template Lib",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_acronym": "{%- for word in cookiecutter.project_slug.split('_') -%}{{ word[0].upper() }}{%- endfor -%}",
   "project_short_description": "A CPP Lib template.",
   "version": "0.1.0",
   "cpp_standard": [
@@ -19,11 +20,21 @@
     "MIT",
     "Apache-2",
     "BSD-3",
-    "GPL-3",    
+    "GPL-3",
     "MPL-2",
+    "BY 4.0",
+    "BY-NC 4.0",
+    "BY-NC-ND 4.0",
+    "BY-NC-SA 4.0",
+    "BY-ND 4.0",
+    "BY-SA 4.0",
     "Proprietary"
   ],
   "vscode_project": [
+    true,
+    false
+  ],
+  "add_spdlog_utils": [
     true,
     false
   ]

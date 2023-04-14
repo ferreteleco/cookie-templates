@@ -1,0 +1,102 @@
+{
+  "psi-header.lang-config": [
+    {
+      "language": "cpp",
+      "begin": "/**",
+      "end": "*/",
+      "prefix": "* ",
+      "blankLinesAfter": 1
+    },
+    {
+      "language": "python",
+      "begin": "\"\"\"",
+      "end": "\"\"\"",
+      "prefix": "",
+      "blankLinesAfter": 1
+    },
+    {
+      "language": "shellscript",
+      "begin": "",
+      "end": "",
+      "prefix": "# ",
+      "blankLinesAfter": 1
+    }
+  ],
+  "psi-header.templates": [
+    {
+      "language": "cpp",
+      "template": [
+        "<<filename>>",
+        " ",
+        "Project: <<project>>",
+        " ",
+        "Maintainer <<author>> (<<authoremail>>)",
+        " ",
+        "Created @ <<filecreated('dddd, Do MMMM YYYY h:mm:ss a')>>",
+        "Copyright (c) <<year>> <<copyrightholder>>",
+        "All Rights Reserved",
+        " ",
+        "This software is released under the <<license>> license."
+      ]
+    },
+    {
+      "language": "python",
+      "template": [
+        "<<filename>>",
+        " ",
+        "Project: <<project>>",
+        " ",
+        "Maintainer <<author>> (<<authoremail>>)",
+        " ",
+        "Created @ <<filecreated('dddd, Do MMMM YYYY h:mm:ss a')>>",
+        "Copyright (c) <<year>> <<copyrightholder>>",
+        "All Rights Reserved",
+        " ",
+        "This software is released under the <<license>> license."
+      ]
+    },
+    {
+      "language": "shellscript",
+      "template": [
+        "!/bin/sh",
+        "<<filename>>",
+        " ",
+        "Project: <<project>>",
+        " ",
+        "Maintainer <<author>> (<<authoremail>>)",
+        " ",
+        "Created @ <<filecreated('dddd, Do MMMM YYYY h:mm:ss a')>>",
+        "Copyright (c) <<year>> <<copyrightholder>>",
+        "All Rights Reserved",
+        " ",
+        "This software is released under the <<license>> license."
+      ]
+    }
+  ],
+  "psi-header.changes-tracking": {
+    "autoHeader": "manualSave",
+    "exclude": [
+      "*"
+    ],
+    "include": [
+      "shellscript",
+      "python",
+      "cpp"
+    ]
+  },
+  "psi-header.variables": [
+    [
+      "project",
+      "{{cookiecutter.project_name}}"
+    ]
+  ],
+  "psi-header.config": {
+    "forceToTop": true,
+    "blankLinesAfter": 1,
+    "spacesBetweenYears": false,
+    "license": "{{cookiecutter.license}}",
+    "author": "{{cookiecutter.full_name}}",
+    "authorEmail": "{{cookiecutter.email}}",
+    "copyrightHolder": "{{cookiecutter.full_name}}"
+  }
+}

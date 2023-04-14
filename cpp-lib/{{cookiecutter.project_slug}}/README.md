@@ -12,17 +12,28 @@ Project's version should be updated, when applicable:
 - In the changelog.
 - In the base CMakeLists.txt file.
 
+## Prerequisites
+
+This project makes use of the following external dependencies:
+
+- [Catch2](https://github.com/catchorg/Catch2): testing framework. Defaults to version 3.0.0, please
+  update accordingly.
+
+{%- if cookiecutter.add_spdlog_utils == 'True' %}
+- [spdlog](https://github.com/gabime/spdlog): logging framework. The project also includes a 
+  configuration function for it that has to be executed first in the main function in order to setup
+  logging.
+{%- endif %}
+
 ## Building
 
 In order to build the library, execute the following commands:
 
 ```bash
-# Create a new directory to perform an out of source build
-$ mkdir build && cd build
 # Configure build
-$ cmake ..
+$ cmake -S . -B build
 # Perform build
-$ cmake --build .
+$ cmake --build build
 ```
 
 ## Testing
@@ -37,7 +48,7 @@ $ cmake ..
 # Build unit tests
 $ cmake --build . --target tests
 # Run unit tests
-$ ./tests/unit/tests_unit
+$ ./tests/unit/${{cookiecutter.project_slug}}_unit_tests
 ```
 
 ## Installing
@@ -46,14 +57,14 @@ In order to build and install the library, execute the following commands:
 
 ```bash
 # Create a new directory to perform an out of source build
-$ mkdir build && cd build
 # Configure build
-$ cmake ..
+$ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 # Perform build
-$ cmake --build .
+$ cmake --build build
 # Install library
-$ cmake --build . --target install
-# Create a DEB package
+$ cmake --install build
+# OR Create a DEB package (optional)
+$ cd build
 $ cpack
 ```
 
@@ -63,7 +74,7 @@ library to a custom directory by specifying the following parameter during the c
 
 ```bash
 # Configure build
-$ cmake -DCMAKE_INSTALL_PREFIX=<directory> ..
+$ cmake -S . -B build -DCMAKE_INSTALL_PREFIX=<directory> -DCMAKE_BUILD_TYPE=Release
 ```
 
 ## Authors

@@ -35,6 +35,14 @@ def remove_vscode_project_files():
         LOG.info("Skipping .vscode file generation (VSCode) ...")
 
 
+def remove_spdlog_logging_sources():
+    flag = {{cookiecutter.add_spdlog_utils}}
+
+    if not flag:
+        LOG.info("Removing SPDLOG utils...")
+        shutil.rmtree("src/logging")
+
+
 def clean():
     """Remove files and folders only needed as input for generation."""
     LOG.info("Removing input data folder ...")
@@ -55,5 +63,6 @@ if __name__ == "__main__":
 
     remove_vscode_project_files()
     set_up_license()
+    remove_spdlog_logging_sources()
     clean()
     change_line_endings_CRLF_to_LF()

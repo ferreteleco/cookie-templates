@@ -1,9 +1,16 @@
 # Compilation configuration
 
+{%- if cookiecutter.add_spdlog_utils == 'True' %}
+add_subdirectory(logging)
+{%- endif %}
+
 add_executable(
   ${PROJECT_NAME}
   {{cookiecutter.project_slug}}.cpp
   {{cookiecutter.project_slug}}_main.cpp
+  {%- if cookiecutter.add_spdlog_utils == 'True' %}
+  ${logging_tools_sources_list}
+  {%- endif %}
 )
 
 target_include_directories(
@@ -23,3 +30,6 @@ target_compile_options(
   PRIVATE
     "-Wall" "-pedantic" "-Wextra"
 )
+
+# Installation
+install (TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

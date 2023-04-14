@@ -18,7 +18,6 @@ def set_up_license():
 
 
 def remove_vscode_project_files():
-
     vscode_project = {{cookiecutter.vscode_project}}
 
     if vscode_project == True:
@@ -42,11 +41,23 @@ def clean():
 
 
 def change_line_endings_CRLF_to_LF():
+    LOG.info("Changing line endings from CRLF to LF...")
     for path in Path(".").glob("**/*"):
         if path.is_file():
             data = path.read_bytes()
             lf_data = data.replace(b"\r\n", b"\n")
             path.write_bytes(lf_data)
+
+
+def remove_spdlog_logging_sources():
+    flag = {{cookiecutter.add_spdlog_utils}}
+
+    if not flag:
+        LOG.info("Removing SPDLOG utils...")
+        shutil.rmtree("src/logging")
+    elif "{{cookiecutter.library_type}}" == "static":
+        path = Path("src/logging/init_logging_dynamic.cpp")
+        path.unlink()
 
 
 if __name__ == "__main__":
@@ -55,5 +66,6 @@ if __name__ == "__main__":
 
     remove_vscode_project_files()
     set_up_license()
+    remove_spdlog_logging_sources()
     clean()
     change_line_endings_CRLF_to_LF()
