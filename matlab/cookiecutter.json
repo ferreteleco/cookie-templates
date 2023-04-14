@@ -12,6 +12,12 @@
     "BSD-3",
     "GPL-3",    
     "MPL-2",
+    "BY 4.0",
+    "BY-NC 4.0",
+    "BY-NC-ND 4.0",
+    "BY-NC-SA 4.0",
+    "BY-ND 4.0",
+    "BY-SA 4.0",
     "Proprietary"
   ],
   "vscode_project": [
