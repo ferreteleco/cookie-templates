@@ -6,9 +6,7 @@
  *
  * Created @ {% now 'utc', '%A, %dth %B %Y %I:%M:%S %p' %}
  * Copyright (c) {% now "utc", "%Y " -%} {{cookiecutter.full_name}}
- * All Rights Reserved
- *
- * This software is released under the {{cookiecutter.license}} license.
+ * {%- if cookiecutter.license  == 'Propietary' -%}All Rights Reserved {%- else -%} This software is released under the <<license>> license.{%- endif -%}
  */
 
 #include <catch2/catch_all.hpp>
