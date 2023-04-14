@@ -23,7 +23,7 @@ This project makes use of the following external dependencies:
 - [spdlog](https://github.com/gabime/spdlog): logging framework. The project also includes a 
   configuration function for it that has to be executed first in the main function in order to setup
   logging.
-{% endif %}
+{%- endif %}
 
 ## Building
 
@@ -46,7 +46,7 @@ $ cmake -S . -B build
 # Build unit tests
 $ cmake --build build --target tests
 # Run unit tests
-$ ./tests/unit/tests_unit
+$ ./tests/unit/${{cookiecutter.project_slug}}_unit_tests
 ```
 
 ## Installing
