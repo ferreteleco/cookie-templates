@@ -56,7 +56,7 @@ library:
 {%- if cookiecutter.add_spdlog_utils == 'True' -%}
 An additional dependency may be added implicitly due to selected options during project creation:
 
-- spdlog: <https://github.com/gabime/spdlog>
+- [spdlog](https://github.com/gabime/spdlog)
 {%- endif %}
 
 ### Variables
