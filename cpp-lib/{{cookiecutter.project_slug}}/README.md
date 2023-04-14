@@ -22,7 +22,7 @@ This project makes use of the following external dependencies:
 {%- if cookiecutter.add_spdlog_utils == 'True' %}
 - [spdlog](https://github.com/gabime/spdlog): logging framework. The project also includes a 
   configuration function for it that has to be executed first in the main function in order to setup
-  logging.
+  logging. Defined sink is called {{cookiecutter.project_acronym}}_LOG_NAME.
 {%- endif %}
 
 ## Building

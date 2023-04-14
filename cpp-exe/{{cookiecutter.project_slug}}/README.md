@@ -20,9 +20,9 @@ This project makes use of the following external dependencies:
   update accordingly.
 
 {%- if cookiecutter.add_spdlog_utils == 'True' %}
-- [spdlog](https://github.com/gabime/spdlog): logging framework. The project also includes a 
+- [spdlog](https://github.com/gabime/spdlog): logging framework. The project also includes a
   configuration function for it that has to be executed first in the main function in order to setup
-  logging.
+  logging. Defined sink is called {{cookiecutter.project_acronym}}_LOG_NAME.
 {%- endif %}
 
 ## Building
@@ -51,23 +51,23 @@ $ ./tests/unit/${{cookiecutter.project_slug}}_unit_tests
 
 ## Installing
 
-In order to build and install the library, execute the following commands:
+In order to build and install the executable, execute the following commands:
 
 ```bash
 # Configure build
 $ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 # Perform build
 $ cmake --build build
-# Install library
+# Install executable
 $ cmake --install build
 # OR Create a DEB package (optional)
 $ cd build
 $ cpack
 ```
 
-By default, the library will be installed in the system directory, which might require
+By default, the executable will be installed in the system directory, which might require
 administrative permissions in order to perform the installation. It is possible to install the
-library to a custom directory by specifying the following parameter during the configure step:
+executable to a custom directory by specifying the following parameter during the configure step:
 
 ```bash
 # Configure build
