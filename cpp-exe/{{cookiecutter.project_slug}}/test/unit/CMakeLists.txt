@@ -1,6 +1,3 @@
-# Target name
-set(UNIT_TEST_BIN ${PROJECT_NAME}_unit_tests PARENT_SCOPE)
-
 # Target sources
 set(
   test_bin_sources
@@ -12,7 +9,7 @@ set(
 # Add tests source files after main
 add_executable(
   ${UNIT_TEST_BIN}
-  ${TEST_BIN_SOURCES}
+  ${test_bin_sources}
 )
 
 target_include_directories(

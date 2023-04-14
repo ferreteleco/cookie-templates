@@ -1,6 +1,3 @@
-# Target name
-set(UNIT_TEST_BIN ${PROJECT_NAME}_unit_tests PARENT_SCOPE)
-
 # Target sources
 set(
   test_bin_sources
