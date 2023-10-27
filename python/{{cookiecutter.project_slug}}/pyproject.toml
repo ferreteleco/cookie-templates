@@ -3,6 +3,10 @@ name = "{{cookiecutter.project_slug}}"
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.project_description}}"
 authors = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+{%- if cookiecutter.license not in ["Propietary"] %}
+license="{{cookiecutter.license}}"
+{%- endif %}
+packages = [{include = "{{cookiecutter.project_slug}}"}]
 
 [tool.poetry.dependencies]
 python = "^{{cookiecutter.python_version}}"
