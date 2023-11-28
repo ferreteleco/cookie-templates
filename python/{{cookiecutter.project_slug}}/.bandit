@@ -1,3 +1,4 @@
 [bandit]
 exclude = tests,.venv,docs
 targets = {{cookiecutter.project_slug}}
+skips = B101,B601
